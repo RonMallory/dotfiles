@@ -1,0 +1,119 @@
+#-----System-----
+# vi vim
+alias vi='vim'
+# ls color
+alias ls='ls --color=auto'
+# alias lookup cat bash_alias
+alias al='cat ~/.bash_aliases'
+# sort by file size
+alias lt='ls --human-readable --size -1 -S --classify'
+# find command in grep history
+alias ghist='history|grep'
+# sort by modification time
+alias left='ls -t -l'
+# count files in directory
+alias count='find . -type f | wc -l'
+# create python virtual environment
+alias ve='python3 -m venv ./venv'
+alias va='source ./venv/bin/activate'
+# protect files from accidently being removed
+alias tcn='mv --force -t ~/.local/share/Trash'
+# df human readable
+alias df="df -Tha --total"
+# du human readable
+alias du="du -ach | sort -h"
+# free human readable
+alias free="free -mt"
+# ps human readable
+alias ps="ps auxf"
+# searchable process table
+alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
+# mkdir default
+alias mkdir="mkdir -pv"
+# wget default
+alias wget="wget -c"
+#-----Vagrant-----
+## create a snapshot
+alias vspu='vagrant snapshot push'
+## restore to snapshot
+alias vspo='vagrant snapshot pop'
+## start vagrant
+alias vu='vagrant up'
+## vagrant destroy
+alias vd='vagrant destroy --force'
+## vagrant up and snapshot push
+alias vusp='vagrant up && snapshot push'
+#-----GIT-----
+alias ga='git add'
+alias gaa='git add --all'
+alias gb='git branch'
+alias gba='git branch --all'
+alias gbd='git branch --delete '
+alias gc='git commit'
+alias gcm='git commit --message'
+alias gco='git checkout'
+alias gcob='git checkout -b'
+alias gcomain='git checkout main'
+alias gcomaster='git checkout master'
+alias gd='git diff'
+alias gda='git diff HEAD'
+alias gi='git init'
+alias glg='git log --graph --oneline --decorate --all'
+alias gld='git log --pretty=format:"%h %ad %s" --date=short --all'
+alias gm='git merge --no-ff'
+alias gma='git merge --abort'
+alias gmc='git merge --continue'
+alias gp='git pull'
+alias gpr='git pull --rebase'
+alias gr='git rebase'
+alias gs='git status'
+alias gss='git status --short'
+alias gst='git stash'
+alias gsta='git stash apply'
+alias gstd='git stash drop'
+alias gstl='git stash list'
+alias gstp='git stash pop'
+alias gsts='git stash save'
+alias grh1='git reset HEAD~1'
+alias gsquashmain='git reset $(git merge-base main $(git rev-parse --abbrev-ref HEAD))'
+alias gsquashmaster='git reset $(git merge-base master $(git rev-parse --abbrev-ref HEAD))'
+alias gaddkey='eval $(ssh-agent) && ssh-add ~/.ssh/id_rsa_msft'
+#-----Ansible-----
+alias ap='ansible-playbook'
+alias ad='ansible-doc'
+alias ag='ansible-galaxy'
+alias alint='ansible-lint'
+alias ylint='yamllint'
+#-----Molecule-----
+alias mt='molecule test'
+alias mtd='molecule --debug test'
+alias mc='molecule converge'
+alias mver='molecule verify'
+#-----Terraform-----
+alias tf='terraform'
+alias tfv='terraform validate'
+alias tfi='terraform init'
+alias tfp='terraform plan'
+alias tfpb='terraform plan -out build.out'
+alias tfpd='terraform plan -destroy -out destroy.out'
+alias tfab='terraform apply build.out'
+alias tfad='terraform apply destroy.out'
+alias tfm='terraform fmt -recursive'
+#-----kube-----
+alias k="kubectl"
+alias kgn="kubectl get namespaces"
+#-----Pulumi-----
+alias p="pulumi"
+alias pu="pulumi up --yes"
+alias pd="pulumi destroy --yes"
+alias pr="pulumi refresh --yes"
+alias pshowurn="pulumi stack --show-urns"
+alias pconfig="pulumi config"
+#-----Rust-----
+alias rr="cargo run"
+alias rb"cargo build"
+alias ri="cargo install"
+alias rn="cargo new"
+alias rversions="rustc --version && cargo --version && rustup --version"
+alias rtoolchain="rustup toolchain list"
+#-----Azure-----
