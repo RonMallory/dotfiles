@@ -111,7 +111,7 @@ alias pshowurn="pulumi stack --show-urns"
 alias pconfig="pulumi config"
 #-----Rust-----
 alias rr="cargo run"
-alias rb"cargo build"
+alias rb="cargo build"
 alias ri="cargo install"
 alias rn="cargo new"
 alias rversions="rustc --version && cargo --version && rustup --version"
